@@ -5,22 +5,22 @@ let cars = [
     {
         id: 1,
         nname: 'Toyota',
-        price: '48000 $',
+        price: 48000,
     },
     {
         id: 2,
         nname: 'BMW',
-        price: '65000 $',
+        price: 650000,
     },
     {
         id: 3,
         nname: 'Jaguar',
-        price: '80000 $',
+        price: 80000,
     },
     {
         id: 4,
         nname: 'Bentley',
-        price: '555000 $',
+        price: 555000,
     }
 
 ];
@@ -70,6 +70,7 @@ function startApp() {
 startApp();
 
 function addToBasket(key) {
+    localStorage.setItem("data",JSON.stringify(cars[key]))
     if (listCards[key] == null) {
         listCards[key] = cars[key];
         listCards[key].quantity = 1
@@ -78,6 +79,7 @@ function addToBasket(key) {
 }
 
 function updateCard() {
+    
     listCard.innerHTML = '';
     let count = 0;
     let totalPrice = 0;
